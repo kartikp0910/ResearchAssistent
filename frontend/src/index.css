@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+:root { color-scheme: light; --paper: #f8f9f5; --panel: #ffffff; --ink: #24372f; --muted: #747e76; --line: #e2e7df; --accent: #35634b; }
+:root.dark { color-scheme: dark; --paper: #151e1a; --panel: #1c2821; --ink: #e5eae4; --muted: #a2afa5; --line: #334239; --accent: #548568; }
+body { margin: 0; min-width: 320px; }
+button, a, textarea { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+::selection { background: #accab8; color: #182b20; }
+@layer components { .icon-button { @apply flex h-9 w-9 items-center justify-center rounded-lg text-muted transition hover:bg-panel hover:text-ink; } }
+.answer { font-size: 14px; line-height: 1.9; overflow-wrap: anywhere; }
+.answer > * + * { margin-top: 0.85rem; }
+.answer h1, .answer h2, .answer h3, .answer h4 { font-weight: 600; line-height: 1.4; margin-top: 1.3rem; }
+.answer h1 { font-size: 1.4rem; } .answer h2 { font-size: 1.2rem; } .answer h3 { font-size: 1.05rem; }
+.answer ul, .answer ol { padding-left: 1.5rem; } .answer ul { list-style: disc; } .answer ol { list-style: decimal; }
+.answer li + li { margin-top: 0.35rem; }
+.answer a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.answer blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 1rem; background: var(--panel); color: var(--muted); }
+.answer pre { overflow-x: auto; padding: 1rem; background: var(--panel); border: 1px solid var(--line); border-radius: 0.75rem; }
+.answer code { font-size: 0.85em; background: var(--panel); padding: 0.15rem 0.3rem; border-radius: 0.2rem; }
+.answer pre code { padding: 0; }
+.answer table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; }
+.answer th, .answer td { padding: 0.6rem; border: 1px solid var(--line); text-align: left; }
+.answer th { background: var(--panel); }
+.answer hr { border-color: var(--line); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
